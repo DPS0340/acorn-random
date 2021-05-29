@@ -3,9 +3,9 @@ export function ACORN(
   moduloPower = 60,
   order = 10
 ) {
-  let M = 2 ** moduloPower;
+  const M = 2 ** moduloPower;
 
-  let temp = +seed.toString().split("").reverse().join("");
+  const temp = +seed.toString().split("").reverse().join("");
   seed = seed * temp;
 
   seed = seed % M;
@@ -14,7 +14,7 @@ export function ACORN(
     seed++;
   }
 
-  let seed2 = (seed + 2) % M;
+  const seed2 = (seed + 2) % M;
 
   const memo = [];
   for (let i = 0; i < order + 1; i++) {
