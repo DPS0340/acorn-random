@@ -24,18 +24,22 @@ export function ACORN(
     }
   }
 
-  const go = function (m, n) {
+  const go = (m, n) => {
     if (m === 0) {
       return seed;
     } else if (n === 0) {
       return seed2;
     } else {
-      if (memo[m][n] !== null) {
-        return memo[m][n];
-      }
-      const result = go(m - 1, n) + go(m, n - 1);
-      memo[m][n] = result;
-      return result % M;
+      const getCached = (m, n) => {
+        if (memo[m][n] !== null) {
+          return memo[m][n];
+        }
+        const result = go(m - 1, n) + go(m, n - 1);
+        memo[m][n] = result;
+        return result;
+      };
+
+      return getCached(m, n) % M;
     }
   };
 
