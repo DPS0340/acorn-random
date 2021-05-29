@@ -1,0 +1,16 @@
+{
+  "name": "acornjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/stats.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/stats.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mathjs": "^9.4.1"
+  },
+  "type": "module"
+}
